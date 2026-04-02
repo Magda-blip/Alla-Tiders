@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <title>Alla Tiders Nyheter</title>
+    
+    </head>
+
+    <body class="bg-gray-100">
+        
+        <!-- Top bar -->
+    <div class="bg-black text-white text-sm px-8 py-3 flex justify-between items-center">
+
+    <!-- Left -->
+    <div class="flex items-center gap-4">
+
+        <!-- Search icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         class="w-5 h-5 text-white" 
+         fill="none" 
+         viewBox="0 0 24 24" 
+         stroke="currentColor">
+      <path stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+
+        <span class="font-serif">ALLA TIDERS</span>
+    </div>
+
+    <!-- Right -->
+    <div>
+        <a href="#" class="hover:underline">Logga In</a>
+    </div>
+
+</div>
+
+<header class="text-center py-6 border-b border-gray-300">
+
+    <!-- Date -->
+    <p id="date" class="text-sm text-gray-500 mb-2"></p>
+
+       <script>
+    const today = new Date();
+
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    };
+
+    let formattedDate = today.toLocaleDateString('sv-SE', options);
+
+    // Split text into words
+    let words = formattedDate.split(" ");
+
+    // Cap first letter on each word
+    words = words.map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1)
+    );
+
+    // Sätt ihop igen
+    formattedDate = words.join(" ");
+
+    document.getElementById("date").textContent = formattedDate;
+</script>
+    <!-- Logo image -->
+    <img src="Alla_tiders_logo.png" 
+         alt="The Times" 
+         class="mx-auto h-16">
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="flex justify-center gap-8 text-sm uppercase">
+            <li><a href="#" class="hover:underline">Hem</a></li>
+            <li><a href="#" class="hover:underline">Världen</a></li>
+            <li><a href="#" class="hover:underline">Sport</a></li>
+            <li><a href="#" class="hover:underline">Nöje</a></li>
+            <li><a href="#" class="hover:underline">Ekonomi</a></li>
+        </ul>
+    </nav>
+
+    </header>
+
+    <div class="bg-black h-20"></div>
+
+
+ 
+
+    </body>
+
+
+    
+
+
+</html>
