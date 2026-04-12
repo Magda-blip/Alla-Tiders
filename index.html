@@ -1,103 +1,232 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-        <link rel="stylesheet" href="styles.css">
-        <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        <title>Alla Tiders Nyheter</title>
-    
-    </head>
+    <title>Alla Tiders Nyheter</title>
 
-    <body class="bg-gray-100">
-        
-        <!-- Top bar -->
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- Top bar -->
     <div class="bg-black text-white text-sm px-8 py-3 flex justify-between items-center">
 
-    <!-- Left -->
-    <div class="flex items-center gap-4">
+        <!-- Left -->
+        <div class="flex items-center gap-4">
 
-        <!-- Search icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" 
-         class="w-5 h-5 text-white" 
-         fill="none" 
-         viewBox="0 0 24 24" 
-         stroke="currentColor">
-      <path stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
-    </svg>
+            <!-- Search icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
 
-        <span class="font-serif">ALLA TIDERS</span>
+            <span class="font-serif">ALLA TIDERS</span>
+        </div>
+
+        <!-- Right -->
+        <div>
+            <a href="#" class="hover:underline">Logga In</a>
+        </div>
+
     </div>
 
-    <!-- Right -->
-    <div>
-        <a href="#" class="hover:underline">Logga In</a>
-    </div>
+    <header class="text-center py-6 border-b border-gray-300">
 
-</div>
+        <!-- Date -->
+        <p id="date" class="text-sm text-gray-500 mb-2"></p>
 
-<header class="text-center py-6 border-b border-gray-300">
+        <script>
+            const today = new Date();
 
-    <!-- Date -->
-    <p id="date" class="text-sm text-gray-500 mb-2"></p>
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
 
-       <script>
-    const today = new Date();
+            let formattedDate = today.toLocaleDateString('sv-SE', options);
 
-    const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
-    };
+            // Split text into words
+            let words = formattedDate.split(" ");
 
-    let formattedDate = today.toLocaleDateString('sv-SE', options);
+            // Cap first letter on each word
+            words = words.map(word =>
+                word.charAt(0).toUpperCase() + word.slice(1)
+            );
 
-    // Split text into words
-    let words = formattedDate.split(" ");
+            // Sätt ihop igen
+            formattedDate = words.join(" ");
 
-    // Cap first letter on each word
-    words = words.map(word => 
-        word.charAt(0).toUpperCase() + word.slice(1)
-    );
+            document.getElementById("date").textContent = formattedDate;
+        </script>
+        <!-- Logo image -->
+        <img src="Alla_tiders_logo.png" alt="The Times" class="mx-auto h-16">
 
-    // Sätt ihop igen
-    formattedDate = words.join(" ");
-
-    document.getElementById("date").textContent = formattedDate;
-</script>
-    <!-- Logo image -->
-    <img src="Alla_tiders_logo.png" 
-         alt="The Times" 
-         class="mx-auto h-16">
-
-    <!-- Navigation -->
-    <nav>
-        <ul class="flex justify-center gap-8 text-sm uppercase">
-            <li><a href="#" class="hover:underline">Hem</a></li>
-            <li><a href="#" class="hover:underline">Världen</a></li>
-            <li><a href="#" class="hover:underline">Sport</a></li>
-            <li><a href="#" class="hover:underline">Nöje</a></li>
-            <li><a href="#" class="hover:underline">Ekonomi</a></li>
-        </ul>
-    </nav>
+        <!-- Navigation -->
+        <nav>
+            <ul class="flex justify-center gap-8 text-sm uppercase">
+                <li><a href="#" class="hover:underline">Hem</a></li>
+                <li><a href="#" class="hover:underline">Världen</a></li>
+                <li><a href="#" class="hover:underline">Sport</a></li>
+                <li><a href="#" class="hover:underline">Nöje</a></li>
+                <li><a href="#" class="hover:underline">Ekonomi</a></li>
+            </ul>
+        </nav>
 
     </header>
 
     <div class="bg-black h-20"></div>
 
+    <main class="flex-1 max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-6">
 
- 
+        <!-- LEFT SIDEBAR -->
+        <aside class="space-y-6">
 
-    </body>
+            <article>
+                <h3 class="font-serif font-semibold text-1g">
+                    Döda havet återuppstår
+                </h3>
+                <p class="text-gray-600 text-sm">
+                    Döda havet är bekräftats återuppstått under påsken 2026 och förväntas göra sin himmelsfärd längre
+                    fram i vår.
+                </p>
+            </article>
+
+            <article>
+                <h3 class="font-serif font-semibold text-lg">
+                    Språkförvirring i Europa
+
+                </h3>
+                <p class="text-gray-600 text-sm">
+                    I ett oväntat politiskt beslut har Belgien och Danmark enats om att byta officiella språk med
+                    varandra. Medborgare i båda länderna har reagerat med både humor och frustration. Språkkurser
+                    rapporteras redan vara fullbokade, medan vissa ifrågasätter hur länge förändringen faktiskt kommer
+                    att bestå.
+                </p>
+            </article>
+
+            <article>
+                <h3 class="font-serif font-semibold text-lg">
+                    Danmark tar tillbaka Skånemejerier
+
+                </h3>
+                <p class="text-gray-600 text-sm">
+                    I ett “helt rimligt historiskt beslut” har Danmark nu återtagit Skånemejerier och därmed indirekt
+                    även Skåne (enligt dem själva). Svenska kylskåp rapporteras redan visa tecken på dansk påverkan, och
+                    experter varnar för att mjölkpaket när som helst kan börja säga “rødgrød med fløde”.
+                </p>
+            </article>
+
+        </aside>
 
 
-    
+        <!-- MAIN CONTENT -->
+        <section class="space-y-6">
+
+            <article>
+                <img src="Draken gör kaos i Gringotts.png">
+                <h2 class="text-3xl font-serif font-bold mb-2">
+                    Djärvt bankrån i Gringotts – drake sattes i rörelse
+                </h2>
+
+                <p class="text-gray-700">
+                    Ett spektakulärt bankrån har skakat Gringotts, den ökända trollkarlsbanken i Diagongränden. Enligt
+                    vittnen tog sig en grupp okända gärningspersoner förbi bankens avancerade säkerhetssystem och
+                    lyckades ta sig ner i de djupaste valven.
+                    Under flykten ska bankens vaktdrake ha satts i rörelse, vilket orsakade panik bland både personal
+                    och besökare. Exakt vad som stulits är ännu oklart, men banken försäkrar att “situationen är under
+                    kontroll”.
+                    Aurorer utreder nu händelsen och uppmanar allmänheten att rapportera misstänkta aktiviteter.
+
+                </p>
+            </article>
+
+            <article>
+                <img src="Pippi Longstocking hedrar London.png">
+                <h2 class="text-3xl font-serif font-bold mb-2">
+                    Staty av Pippi Långstrump och Lilla Gubben invigs i London
+                </h2>
+
+                <p class="text-gray-700">
+                    En ny staty föreställande Pippi Långstrump tillsammans med sin häst Lilla Gubben har invigts i
+                    centrala London. Statyn visar Pippi när hon lyfter hästen över huvudet, till publikens stora
+                    förtjusning.
+                    Initiativet är en hyllning till Astrid Lindgrens ikoniska karaktär, och lockade både svenska och
+                    brittiska besökare till invigningen.
+
+
+                </p>
+            </article>
+
+
+        </section>
+
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="space-y-6">
+
+            <article>
+                <img src="Öronformade godisar i sockerlag.png">
+                <h3 class="font-semibold">
+                    Afrikanskt örongodis blir viral succé
+                </h3>
+            </article>
+
+            <article>
+                <img src="Barbapapa hjälpar vandrare vid fjord.png">
+                <h3 class="font-semibold">
+                    Barbapappa besöker Norge
+                </h3>
+            </article>
+
+            <article>
+                <img src="67-number-gradient-3d-render-png.webp">
+                <h3 class="font-semibold">
+                    67 får barn-ska heta 13
+                </h3>
+            </article>
+
+            <article>
+                <img src="Gandalf söker sin bortblåsta hatt.png">
+                <h3 class="font-semibold">
+                    Midgårdskris-Gandalfs hatt har rymt
+                </h3>
+            </article>
+        </aside>
+
+    </main>
+    <footer class="mt-auto bg-black text-white">
+
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <!-- Left -->
+            <span class="text-sm">
+                © 2026 Alla Tiders
+            </span>
+
+            <!-- Right -->
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="hover:underline">Om</a>
+                <a href="#" class="hover:underline">Kontakt</a>
+                <a href="#" class="hover:underline">Privacy</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+
+
 
 
 </html>
