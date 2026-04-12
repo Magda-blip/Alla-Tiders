@@ -62,7 +62,7 @@
                 word.charAt(0).toUpperCase() + word.slice(1)
             );
 
-            // Sätt ihop igen
+            // Put back together
             formattedDate = words.join(" ");
 
             document.getElementById("date").textContent = formattedDate;
@@ -70,7 +70,7 @@
         <!-- Logo image -->
         <img src="Alla_tiders_logo.png" alt="The Times" class="mx-auto h-16">
 
-        <!-- Navigation -->
+        <!-- Navbar -->
         <nav>
             <ul class="flex justify-center gap-8 text-sm uppercase">
                 <li><a href="#" class="hover:underline">Hem</a></li>
@@ -213,7 +213,33 @@
             </span>
 
             <!-- Right -->
-            <div class="flex gap-6 text-sm">
+            <div class="flex gap-6 items-center text-sm">
+
+
+
+                <!-- Facebook -->
+                <a href="#" class="hover:opacity-70">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                        <path
+                            d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2.8v-2.9h2.8V9.8c0-2.8 1.7-4.3 4.2-4.3 1.2 0 2.4.2 2.4.2v2.6h-1.4c-1.4 0-1.8.9-1.8 1.7v2.1h3l-.5 2.9h-2.5v7A10 10 0 0 0 22 12z" />
+                    </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="#" class="hover:opacity-70">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                        <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 
+            5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 
+            3v10c0 1.7-1.3 3-3 3H7c-1.7 
+            0-3-1.3-3-3V7c0-1.7 1.3-3 
+            3-3h10zm-5 3a5 5 0 1 0 
+            0 10 5 5 0 0 0 0-10zm0 
+            2a3 3 0 1 1 0 6 3 3 0 
+            0 1 0-6zm4.5-.9a1.1 1.1 
+            0 1 0 0 2.2 1.1 1.1 0 
+            0 0 0-2.2z" />
+                    </svg>
+                </a>
                 <a href="#" class="hover:underline">Om</a>
                 <a href="#" class="hover:underline">Kontakt</a>
                 <a href="#" class="hover:underline">Privacy</a>
