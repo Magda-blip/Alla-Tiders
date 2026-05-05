@@ -1,6 +1,8 @@
+<!doctype html>
 <html>
 
 <head>
+   <script src="main.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -131,43 +133,23 @@
         <!-- MAIN CONTENT -->
         <section class="space-y-6">
 
-            <article>
-                <img src="Draken gör kaos i Gringotts.png">
-                <h2 class="text-3xl font-serif font-bold mb-2">
-                    Djärvt bankrån i Gringotts – drake sattes i rörelse
-                </h2>
+    <!-- FORM -->
+    <form id="articleForm" class="bg-gray-100 p-4 rounded space-y-3">
+        <input type="text" id="title" placeholder="Rubrik" class="w-full p-2 border" required>
 
-                <p class="text-gray-700">
-                    Ett spektakulärt bankrån har skakat Gringotts, den ökända trollkarlsbanken i Diagongränden. Enligt
-                    vittnen tog sig en grupp okända gärningspersoner förbi bankens avancerade säkerhetssystem och
-                    lyckades ta sig ner i de djupaste valven.
-                    Under flykten ska bankens vaktdrake ha satts i rörelse, vilket orsakade panik bland både personal
-                    och besökare. Exakt vad som stulits är ännu oklart, men banken försäkrar att “situationen är under
-                    kontroll”.
-                    Aurorer utreder nu händelsen och uppmanar allmänheten att rapportera misstänkta aktiviteter.
+        <input type="text" id="image" placeholder="Bild-URL (valfri)" class="w-full p-2 border">
 
-                </p>
-            </article>
+        <textarea id="content" placeholder="Innehåll" class="w-full p-2 border" required></textarea>
 
-            <article>
-                <img src="Pippi Longstocking hedrar London.png">
-                <h2 class="text-3xl font-serif font-bold mb-2">
-                    Staty av Pippi Långstrump och Lilla Gubben invigs i London
-                </h2>
+        <button type="submit" class="bg-black text-white px-4 py-2">
+            Skapa artikel
+        </button>
+    </form>
 
-                <p class="text-gray-700">
-                    En ny staty föreställande Pippi Långstrump tillsammans med sin häst Lilla Gubben har invigts i
-                    centrala London. Statyn visar Pippi när hon lyfter hästen över huvudet, till publikens stora
-                    förtjusning.
-                    Initiativet är en hyllning till Astrid Lindgrens ikoniska karaktär, och lockade både svenska och
-                    brittiska besökare till invigningen.
+    <!-- ARTIKLAR -->
+    <div id="articles" class="space-y-6"></div>
 
-
-                </p>
-            </article>
-
-
-        </section>
+</section>
 
 
         <!-- RIGHT SIDEBAR -->
