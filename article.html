@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Artikel</title>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Top bar -->
+    <div class="bg-black text-white text-sm px-8 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <span class="font-serif">ALLA TIDERS</span>
+        </div>
+        <a href="index.html" class="hover:underline">← Tillbaka</a>
+    </div>
+
+    <main class="max-w-3xl mx-auto p-6 w-full flex-1">
+
+        <!-- ARTICLE -->
+        <div id="articleContent" class="mb-10"></div>
+
+        <!-- LIKES/DISLIKES -->
+        <div class="flex gap-4 mb-10">
+            <button id="likeBtn" class="bg-black text-white px-4 py-2 rounded hover:opacity-70">
+                👍 <span id="likeCount">0</span>
+            </button>
+            <button id="dislikeBtn" class="bg-gray-200 text-black px-4 py-2 rounded hover:opacity-70">
+                👎 <span id="dislikeCount">0</span>
+            </button>
+        </div>
+
+        <!-- COMMENTS -->
+        <div class="border-t pt-6">
+            <h2 class="text-xl font-bold mb-4">Comments</h2>
+
+            <div class="flex gap-2 mb-6">
+                <input id="commentInput" type="text" placeholder="Write a comment..." 
+                    class="flex-1 border p-2">
+                <button id="commentBtn" class="bg-black text-white px-4 py-2">
+                    Send
+                </button>
+            </div>
+
+            <div id="commentsList" class="space-y-3"></div>
+        </div>
+
+    </main>
+
+    <script src="article.js"></script>
+</body>
+</html>
